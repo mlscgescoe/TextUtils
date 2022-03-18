@@ -21,8 +21,6 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
 
-
-
     return (
     <>
       <h4>{props.heading}</h4>
@@ -30,6 +28,12 @@ export default function TextForm(props) {
         <textarea className="form-control" id="myBox" rows="6" value={text} onChange={handleChange}></textarea>
         <button className="btn btn-primary my-2" onClick={upperClick}>Convert to UpperCase</button>
         <button className="btn btn-primary my-2 mx-2" onClick={lowerClick}>Convert to LowerCase</button>
+      </div>
+
+      <div className="my-3">
+          <h4>Your Text Summary</h4>
+          <p>{text.split(" ").length} words, {text.length} characters</p>
+          <p>{0.008 * text.split(" ").length} Minutes to Read</p>
       </div>
     </>
   );

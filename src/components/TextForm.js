@@ -21,6 +21,10 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
 
+    const clearText = ()=>{
+        setText("")
+    }
+
     return (
     <>
       <h4 style={{color: props.mode === 'dark'?'white':'black'}}>{props.heading}</h4>
@@ -28,6 +32,7 @@ export default function TextForm(props) {
         <textarea className="form-control" id="myBox" rows="6" style={{backgroundColor: props.mode === 'dark'?'grey':'white', color: props.mode === 'dark'?'white':'black'}} value={text} onChange={handleChange}></textarea>
         <button className="btn btn-primary my-2" onClick={upperClick}>Convert to UpperCase</button>
         <button className="btn btn-primary my-2 mx-2" onClick={lowerClick}>Convert to LowerCase</button>
+        <button className="btn btn-primary my-2" onClick={clearText}>Clear Text</button>
       </div>
 
       <div className="my-3" style={{color: props.mode === 'dark'?'white':'black'}}>

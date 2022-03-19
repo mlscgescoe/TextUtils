@@ -13,11 +13,13 @@ function App() {
     if(mode==='dark'){
       setMode('light');
       document.body.style.backgroundColor = 'white'
+      document.title = "TextUtils - Home"
     }
     
     else{
       setMode('dark');
       document.body.style.backgroundColor = 'grey'
+      document.title = "TextUtils - Dark Mode"
     }
   }
 

@@ -31,19 +31,21 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
+      <Router>
       <Navbar title = "TextUtils" aboutText = "About TextUtils" mode={mode} toggleMode={toggleMode}/>
-      <div className="container my-3">
-        <TextForm heading = "Enter Text to Analyze" mode={mode}/>
-      </div>
-      {/* <Switch> */}
-          {/* <Route exact path="/about">
-            <About/>
-          </Route> */}
-          {/* <Route exact path="/">
+      <Switch>
+          <Route exact path="/about">
+            <div className="container my-3">
+              <About mode={mode}/>
+            </div>
+          </Route>
+          <Route exact path="/">
+            <div className="container my-3">
+              <TextForm heading = "Enter Text to Analyze" mode={mode}/>
+            </div>
           </Route>
       </Switch>
-      </Router> */}
+      </Router>
     </>
   );
 }

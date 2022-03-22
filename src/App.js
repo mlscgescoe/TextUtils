@@ -4,6 +4,12 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
 import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
 
@@ -25,13 +31,20 @@ function App() {
 
   return (
     <>
-      <Navbar title = "TextUtils"
-        aboutText = "About TextUtils" mode={mode} toggleMode={toggleMode}/>
 
+      <Router>
+      <Navbar title = "TextUtils" aboutText = "About TextUtils" mode={mode} toggleMode={toggleMode}/>
       <div className="container my-3">
-        <TextForm heading = "Enter Text to Analyze" mode={mode}/>
-        {/* <About/> */}
+      <Switch>
+          <Route exact path="/about">
+            <About/>
+          </Route>
+          <Route exact path="/">
+            <TextForm heading = "Enter Text to Analyze" mode={mode}/>
+          </Route>
+      </Switch>
       </div>
+      </Router>
     </>
   );
 }
